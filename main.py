@@ -13,9 +13,8 @@ from core.functions import (
 )
 
 
-def main(websites, num_reload_cycles, keep_awake):
-    min_interval = 120
-    max_interval = 180
+def main(websites, keep_awake, min_interval=120, max_interval=180):
+    num_reload_cycles = len(websites)  # one reload per website
 
     brave_path = find_brave_executable()
     if not brave_path:
@@ -23,6 +22,9 @@ def main(websites, num_reload_cycles, keep_awake):
         sys.exit(1)
 
     print("[•] Brave browser found:", brave_path)
+    print(f"[•] Websites to refresh ({num_reload_cycles}):")
+    for site in websites:
+        print(f"    - {site}")
 
     if keep_awake:
         keep_system_awake(True)
@@ -61,41 +63,39 @@ def main(websites, num_reload_cycles, keep_awake):
         sys.exit(1)
 
 
-
 default_websites = [
     "https://www.freelancer.pk/dashboard",
     "https://upwork.com",
     "https://www.fiverr.com/seller_dashboard",
 ]
 
-keep_awake_input = input(
-    "[•] Keep system awake? (True/False): "
-).strip().lower()
-keep_awake = keep_awake_input == "true"
+websites = default_websites.copy()
 
-print("[•] Default websites are: Fiverr, Upwork, Freelancer")
-change_links = input(
-    "[•] Want to Change websites? (T/F): "
-).strip().upper()
-
-websites = default_websites
-
+change_links = input("[•] Do you want to change websites? (T/F): ").strip().upper()
 if change_links == "T":
     try:
-        count = int(input("[•] How many websites You want to Refresh (ex: 2): "))
+        count = int(input("[•] How many websites you want to refresh? "))
         if count <= 0:
             raise ValueError
-
         websites = []
         for i in range(count):
-            url = input(f"Enter website {i + 1}: ")
+            url = input(f"Enter website {i + 1}: ").strip()
             websites.append(url)
-
     except ValueError:
         print("[✗] Invalid number of websites.")
         sys.exit(1)
 
-num_reload_cycles = len(websites)
+keep_awake_input = input("[•] Keep system awake? (True/False): ").strip().lower()
+keep_awake = keep_awake_input == "true"
+
+try:
+    min_interval = int(input("[•] Minimum interval in seconds (default 120): ") or 120)
+    max_interval = int(input("[•] Maximum interval in seconds (default 180): ") or 180)
+    if min_interval <= 0 or max_interval <= 0 or min_interval > max_interval:
+        raise ValueError
+except ValueError:
+    print("[✗] Invalid interval input. Using defaults 120–180s.")
+    min_interval, max_interval = 120, 180
 
 if __name__ == "__main__":
-    main(websites, num_reload_cycles, keep_awake)
+    main(websites, keep_awake, min_interval, max_interval)

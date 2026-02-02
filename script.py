@@ -64,9 +64,9 @@ def main(websites, num_reload_cycles, keep_awake):
 # ================= USER INPUT =================
 
 default_websites = [
-    "https://www.freelancer.pk/u/UzairArain554",
-    "https://www.upwork.com/freelancers/~016bc28994db577ad5",
-    "https://www.fiverr.com/sellers/uzair_programs/edit",
+    "https://www.freelancer.pk/dashboard",
+    "https://upwork.com",
+    "https://www.fiverr.com/seller_dashboard",
 ]
 
 keep_awake_input = input(

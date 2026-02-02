@@ -96,15 +96,7 @@ if change_links == "T":
         print("[✗] Invalid number of websites.")
         sys.exit(1)
 
-try:
-    num_reload_cycles = int(
-        input("[•] Reload cycles per interval: ")
-    )
-    if num_reload_cycles <= 0:
-        raise ValueError
-except ValueError:
-    print("[✗] Invalid reload cycle count.")
-    sys.exit(1)
+num_reload_cycles = len(websites)
 
 if __name__ == "__main__":
     main(websites, num_reload_cycles, keep_awake)

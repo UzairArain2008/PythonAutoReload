@@ -1,0 +1,8 @@
+[project]
+name = "autoreload-cli"
+version = "0.1.0"
+description = "Python Auto Reload CLI tool"
+authors = [{name="Uzair"}]
+
+[project.scripts]
+autoreload = "autoreload.cli:main_entry"

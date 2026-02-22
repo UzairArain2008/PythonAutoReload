@@ -143,10 +143,11 @@ def main(websites, keep_awake, min_interval=120, max_interval=180):
 def main_entry():
     parser = argparse.ArgumentParser(
         prog="autoreload",
-        description="AutoReload CLI — browser automation tool"
+        description="AutoReload CLI — browser automation tool\n"
+                    "Hybrid mode: use CLI flags or interactive prompts",
+        formatter_class=argparse.RawTextHelpFormatter
     )
 
-    # Optional arguments
     parser.add_argument(
         "--version",
         action="version",
@@ -155,16 +156,21 @@ def main_entry():
     )
 
     parser.add_argument(
-        "--websites", nargs='+', help="List of websites to reload"
+        "--websites", nargs='+',
+        help="List of websites to reload (e.g. --websites https://upwork.com https://fiverr.com)\n"
+             "Default (interactive mode) will prompt for websites"
     )
     parser.add_argument(
-        "--keep-awake", type=str, choices=["True", "False"], help="Keep system awake"
+        "--keep-awake", type=str, choices=["True", "False"],
+        help="Keep system awake (True/False)\nDefault: False if not provided"
     )
     parser.add_argument(
-        "--min-interval", type=int, help="Minimum reload interval in seconds"
+        "--min-interval", type=int,
+        help="Minimum reload interval in seconds\nDefault: 120"
     )
     parser.add_argument(
-        "--max-interval", type=int, help="Maximum reload interval in seconds"
+        "--max-interval", type=int,
+        help="Maximum reload interval in seconds\nDefault: 180"
     )
 
     args = parser.parse_args()

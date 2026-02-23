@@ -30,8 +30,8 @@ This script automatically reloads websites at specified intervals to keep them a
 
 The script opens the websites first, and then, after the chosen interval, starts pressing:
 
-* **CTRL + TAB** (switch tabs)
-* **CTRL + R** (reload tab)
+- **CTRL + TAB** (switch tabs)
+- **CTRL + R** (reload tab)
 
 > ⚠️ Note: If you have other websites open, this program may not work properly.  
 > It works best if you leave your laptop or PC alone while it runs.
@@ -56,23 +56,26 @@ python -m venv venv
 Activate it:
 
 **Windows:**
+
 ```bash
 venv\Scripts\activate
 ```
 
 **macOS/Linux:**
+
 ```bash
 source venv/bin/activate
 ```
 
-### 3. Install the Project in Editable Mode
+### 3. Install Libraries
 
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
 > Note: `pip install -e .` installs the project in editable mode, which means any changes you make to the code will be immediately available without reinstalling.
 > This is useful for development.
+> And you've alreay installed in when you type `pip install -r requirements.txt`
 
 ---
 
@@ -93,18 +96,13 @@ websites = [
 ### 2. Run the Script
 
 ```bash
-python cli.py
-```
-
-Or if installed as a module:
-
-```bash
-python -m PythonAutoReload.cli
+autoreload
 ```
 
 ### 3. Follow the Prompts
 
 The script will ask you to:
+
 - Confirm the websites to reload
 - Set the interval (in seconds) between reloads
 
@@ -131,9 +129,9 @@ Then sit back and let it work!
 
 If you notice any errors or want to reach out, you can contact me through:
 
-* **Instagram**: [uzair_arain_554](https://www.instagram.com/uzair_arain_554/)
-* **Discord**: uzairarain554
-* **Portfolio**: [uzairarain2008.github.io](https://uzairarain2008.github.io)
-* **LinkedIn**: Muhammad Uzair
+- **Instagram**: [uzair_arain_554](https://www.instagram.com/uzair_arain_554/)
+- **Discord**: uzairarain554
+- **Portfolio**: [uzairarain2008.github.io](https://uzairarain2008.github.io)
+- **LinkedIn**: Muhammad Uzair
 
 > You can also find all my links through my portfolio.

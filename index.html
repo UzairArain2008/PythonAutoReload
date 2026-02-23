@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoReload CLI | Uzair Arain</title>
 
-    <!-- Link to Google Fonts (matching your portfolio theme) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Reset & body */
         * {
             margin: 0;
             padding: 0;
@@ -24,14 +22,12 @@
             line-height: 1.6;
         }
 
-        /* Container */
         .container {
             max-width: 900px;
             margin: 60px auto;
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -40,7 +36,6 @@
         header h1 {
             font-size: 2.6rem;
             color: #1a73e8;
-            /* match your portfolio primary color */
         }
 
         header p {
@@ -48,7 +43,6 @@
             margin-top: 8px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background: #1a73e8;
@@ -65,7 +59,6 @@
             background: #155ab6;
         }
 
-        /* Sections */
         section {
             background: white;
             padding: 20px 25px;
@@ -92,9 +85,9 @@
             border-radius: 6px;
             font-family: 'Courier New', monospace;
             margin: 10px 0;
+            white-space: pre-line;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 50px;
@@ -108,7 +101,6 @@
 <body>
     <div class="container">
 
-        <!-- Header -->
         <header>
             <h1>AutoReload CLI</h1>
             <p>Professional Browser Auto-Reload Tool — by Uzair Arain</p>
@@ -118,58 +110,94 @@
                 download>Download ZIP</a>
         </header>
 
-        <!-- About -->
         <section>
             <h2>About</h2>
-            <p>AutoReload CLI is a terminal tool that automates refreshing of websites.
+            <p>
+                AutoReload CLI is a terminal tool that automates refreshing of websites.
                 It supports interactive step-by-step mode as well as CLI flags for advanced users.
-                Colored logs, professional banner, and "keep awake" mode make it perfect for developers and freelancers.
+                Colored logs, professional banner, and "keep awake" mode make it useful for developers and freelancers.
             </p>
         </section>
 
-        <!-- Features -->
         <section>
             <h2>Features</h2>
             <ul>
                 <li>Interactive prompts for websites, intervals, and system awake</li>
                 <li>CLI flags: <code>--websites</code>, <code>--keep-awake</code>, <code>--min-interval</code>,
-                    <code>--max-interval</code>
-                </li>
+                    <code>--max-interval</code></li>
                 <li>Colored logs and clean terminal banner</li>
                 <li>Works with Brave browser automation</li>
                 <li>Hybrid: run step-by-step or via flags</li>
             </ul>
         </section>
 
-        <!-- Installation -->
         <section>
             <h2>Installation</h2>
-            <p>Clone the repository and install in editable mode:</p>
-            <code>git clone https://github.com/UzairArain2008/Python-Auto-Reload.git
+
+            <h3>1. Clone Repository</h3>
+            <code>
+git clone https://github.com/UzairArain2008/Python-Auto-Reload.git
 cd Python-Auto-Reload
-pip install -e .</code>
-            <p>Then run:</p>
-            <code>autoreload</code>
+            </code>
+
+            <h3>2. Create Virtual Environment (Recommended)</h3>
+            <code>
+python -m venv venv
+            </code>
+
+            <p><strong>Activate:</strong></p>
+
+            <p><strong>Windows</strong></p>
+            <code>
+venv\Scripts\activate
+            </code>
+
+            <p><strong>macOS / Linux</strong></p>
+            <code>
+source venv/bin/activate
+            </code>
+
+            <h3>3. Install in Editable Mode</h3>
+            <code>
+pip install -e .
+            </code>
+
+            <p>
+                This command installs the project locally and registers the <strong>autoreload</strong>
+                command inside your virtual environment.
+                The <strong>-e</strong> flag means editable mode — you can modify the source code
+                and changes apply immediately without reinstalling.
+            </p>
+
+            <p>After installation, run:</p>
+            <code>
+autoreload
+            </code>
+
         </section>
 
-        <!-- Usage -->
         <section>
             <h2>Usage</h2>
+
             <p><strong>Interactive mode:</strong></p>
-            <code>autoreload</code>
+            <code>
+autoreload
+            </code>
+
             <p><strong>CLI flags mode:</strong></p>
-            <code>autoreload --websites https://upwork.com https://fiverr.com --keep-awake True --min-interval 60 --max-interval 120</code>
+            <code>
+autoreload --websites https://upwork.com https://fiverr.com --keep-awake True --min-interval 60 --max-interval 120
+            </code>
         </section>
 
-        <!-- Help & Version -->
         <section>
             <h2>Help & Version</h2>
-            <p>Run any of these for CLI guidance:</p>
-            <code>autoreload -h
-autoreload --version</code>
+            <code>
+autoreload -h
+autoreload --version
+            </code>
         </section>
 
-        <!-- Footer -->
         <footer>
             © 2026 Uzair Arain — <a href="https://uzairarain.github.io" target="_blank">uzairarain.github.io</a>
         </footer>

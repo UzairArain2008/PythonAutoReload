@@ -69,7 +69,7 @@ source venv/bin/activate
 
 ---
 
-# Contact
+## Contact
 
 If you notice any errors or want to reach out, you can contact me through:
 * Instagram: uzair_arain_554
